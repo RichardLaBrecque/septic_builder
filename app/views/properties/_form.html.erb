@@ -1,0 +1,46 @@
+<%= form_with(model: @property, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street %>
+    <%= f.text_field :street %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :design_unit %>
+    <%= f.number_field :design_unit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :flow_rate %>
+    <%= f.number_field :flow_rate %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :user_id %>
+  </div>
+
+  <% if property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+        <% property.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

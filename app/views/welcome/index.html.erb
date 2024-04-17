@@ -1,0 +1,6 @@
+<h1>Welcome#index</h1>
+<% @properties.each do |property| %>
+  <%= link_to "#{property.number} #{property.street}, #{property.city}", property_path(property)%>
+<% end %>
+<%= link_to "new tech", new_technology_path %>
+<p>Welcome to the Septic Builder</p>

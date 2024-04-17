@@ -1,0 +1,36 @@
+<%= form_with(model: technology, local: true) do |form| %>
+  <% if technology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(technology.errors.count, "error") %> prohibited this technology from being saved:</h2>
+
+      <ul>
+        <% technology.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :make %>
+    <%= form.text_field :make %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+  <div class="field">
+    <%= form.label :sqft %>
+    <%= form.number_field :sqft, step: 0.1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unit %>
+    <%= form.text_field :unit %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

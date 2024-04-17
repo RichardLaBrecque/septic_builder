@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<p> <%= "#{@user.name}" %></p>
+<p> <%= "#{@user.email}" %></p>
+<% @user.properties.each do |property|%>
+  <tr>
+    <td><%= link_to "#{property.number} #{property.street}, #{property.city}", property %></td>
+    <td><%= link_to 'Edit', edit_property_path(property) %></td>      <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+
+<p><%= link_to 'New Property', new_property_path(user_id: @user.id) %></p>
+<p><%= link_to 'Edit User', edit_user_path(@user) %> </p>
+<p><%= link_to 'All Clients', users_path %> </p>

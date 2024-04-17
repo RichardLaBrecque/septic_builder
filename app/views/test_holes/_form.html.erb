@@ -1,0 +1,41 @@
+<%= form_with(model: @test_hole, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :load_rate %>
+    <%= f.number_field :load_rate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ledge_depth %>
+    <%= f.text_field :ledge_depth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shwt %>
+    <%= f.number_field :shwt %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :property_id %>
+  </div>
+
+  <% if test_hole.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(test_hole.errors.count, "error") %> prohibited this test_hole from being saved:</h2>
+
+      <ul>
+        <% test_hole.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
