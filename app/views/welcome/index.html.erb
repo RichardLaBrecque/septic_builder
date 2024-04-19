@@ -1,6 +1,13 @@
-<h1>Welcome#index</h1>
-<% @properties.each do |property| %>
-  <%= link_to "#{property.number} #{property.street}, #{property.city}", property_path(property)%>
-<% end %>
-<%= link_to "new tech", new_technology_path %>
-<p>Welcome to the Septic Builder</p>
+<h1>Welcome to the Septic Builder</h1>
+<div>
+  <% @properties.each do |property| %>
+    <div>
+      <%= link_to "#{property.number} #{property.street}, #{property.city}", property_path(property)%>
+    </div>
+  <% end %>
+</div>
+<div class="footer-wrapper shared-bar">
+  <div class="footer-link">
+    <%= link_to "Home", root_path %>
+  </div>
+</div>

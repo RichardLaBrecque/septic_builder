@@ -13,3 +13,344 @@
  *= require_tree .
  *= require_self
  */
+/* Shared styles for nav-bar and footer-wrapper */
+.shared-bar {
+  padding: 10px 20px;
+  /* Adjust padding */
+  display: flex;
+  justify-content: space-around;
+  /* Spread items evenly */
+  border-radius: 5px;
+  /* Add border radius */
+  text-align: center;
+  /* Center align text */
+}
+
+/* Styles for nav-bar */
+.nav-bar {
+  background-color: #4CAF50;
+  /* Green background color */
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Styles for footer-wrapper */
+.footer-wrapper {
+  background-color: #999;
+  /* Grey background color */
+}
+
+/* Styles for links inside nav-bar and footer-wrapper */
+.shared-bar a {
+  color: white;
+  font-weight: bold;
+  /* Make the links bold */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+/* Hover styles for links inside nav-bar and footer-wrapper */
+.shared-bar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Lighten background on hover */
+}
+
+/* Red styles for links inside footer-wrapper */
+.footer-wrapper .footer-destroy-link a {
+  background-color: red;
+  /* Red background color */
+  color: white;
+  /* White text color */
+}
+
+/* Darker red hover styles for links inside footer-wrapper */
+.footer-wrapper .footer-destroy-link a:hover {
+  background-color: #d9534f;
+  /* Darker red on hover */
+}
+
+.nav-link a {
+  color: white;
+  /* Set link color to white */
+  text-decoration: none;
+  /* Remove underline */
+  font-weight: bold;
+  /* Make link text bold */
+}
+
+.nav-link {
+  margin: 0 10px;
+  /* Add margin between nav links */
+}
+
+.nav-link a:hover {
+  text-decoration: underline;
+  /* Add underline on hover */
+}
+
+.property-show-wrapper {
+  margin: 0 auto;
+  /* Centers the div horizontally */
+  text-align: center;
+  /* Centers the text inside the div */
+}
+
+.test-hole-group-wrapper {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Creates a grid with three columns */
+  grid-gap: 20px;
+  /* Adds spacing between grid items */
+}
+
+.test-hole-group-wrapper h2 {
+  text-align: center;
+  /* Centers the heading */
+  margin-bottom: 20px;
+  /* Adds some space below the heading */
+}
+
+.test-hole-wrapper {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.test-hole-wrapper p {
+  margin-bottom: 5px;
+}
+
+.test-hole-wrapper button {
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.test-hole-wrapper button:hover {
+  background-color: #45a049;
+}
+
+.test-hole-group-heading {
+  text-align: center;
+  /* Center the heading */
+  margin-bottom: 20px;
+  /* Add space below the heading */
+}
+
+.test-hole-header h3,
+.calculation-header h3 {
+  color: #333;
+  /* Dark text color */
+  text-align: center;
+
+}
+
+.footer-wrapper .footer-link {
+  display: inline-block;
+}
+
+.footer-wrapper .footer-link a {
+  color: white;
+  font-weight: bold;
+  /* Make the links bold */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.footer-wrapper .footer-link a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Lighten background on hover */
+}
+
+.footer-wrapper .footer-destroy-link a {
+  background-color: red;
+  /* Red background color */
+  color: white;
+  /* White text color */
+  font-weight: bold;
+  /* Make the text bold */
+  padding: 5px 10px;
+  /* Adjust padding */
+  border-radius: 3px;
+  /* Add border radius */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.footer-wrapper .footer-destroy-link a:hover {
+  background-color: #d9534f;
+  /* Darker red on hover */
+}
+
+.calc-data-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* Gap between calculation data */
+}
+
+.test-calc-data {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  flex: 1 1 300px;
+  /* Flex item width */
+}
+
+.test-calc-data h3 {
+  color: #333;
+  /* Dark text color */
+}
+
+.test-calc-data p {
+  color: #666;
+  /* Lighter text color */
+}
+
+.user-header-wrapper {
+  padding: 20px;
+  /* Adjust padding */
+  text-align: center;
+  /* Center align text */
+}
+
+.user-name-wrapper h1 {
+  margin: 0;
+  /* Remove default margin */
+  font-size: 24px;
+  /* Adjust font size */
+}
+
+.user-email-wrapper p {
+  margin: 0;
+  /* Remove default margin */
+}
+
+.user-properties-group-wrapper {
+  margin-top: 20px;
+  /* Add margin top */
+}
+
+.user-property-link {
+  background-color: #f8f9fa;
+  /* Light grey background color */
+  padding: 10px;
+  /* Adjust padding */
+  margin-bottom: 10px;
+  /* Add margin bottom */
+  border-radius: 5px;
+  /* Add border radius */
+  display: block;
+  /* Convert to block element */
+  text-decoration: none;
+  /* Remove underline */
+  color: #333;
+  /* Dark text color */
+}
+
+.user-property-link:hover {
+  background-color: #e9ecef;
+  /* Darken background on hover */
+}
+
+
+.user-show-header {
+  text-align: center;
+  /* Center align text */
+}
+
+.user-grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow items to wrap */
+  justify-content: center;
+  /* Center items horizontally */
+  gap: 20px;
+  /* Gap between grid items */
+}
+
+.user-wrapper {
+  background-color: #f8f9fa;
+  /* Light grey background color */
+  padding: 10px;
+  /* Adjust padding */
+  border-radius: 5px;
+  /* Add border radius */
+  text-align: center;
+  /* Center align text */
+}
+
+.user-wrapper a {
+  color: #333;
+  /* Dark text color */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.user-wrapper a:hover {
+  text-decoration: underline;
+  /* Underline on hover */
+}
+
+.user-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.user-form {
+  width: 300px;
+  /* Adjust width as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-control {
+  width: calc(100% - 22px);
+  /* Adjust width to match the container minus padding and border */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.actions {
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.client-header {
+  text-align: center;
+}

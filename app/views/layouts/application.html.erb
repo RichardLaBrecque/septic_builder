@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <div class="nav-container">
+      <div class="nav-bar shared-bar">
+        <div class="nav-link">
+          <%= link_to "Client Index", users_path %>
+        </div>
+        <div class="nav-link">
+          <%= link_to "Tech Index", technologies_path %>
+        </div>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

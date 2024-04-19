@@ -1,26 +1,58 @@
 <p id="notice"><%= notice %></p>
-<h1> <%= "#{@property.number} #{@property.street}, #{@property.city}" %></h1>
-<p> <%= "Bedrooms: #{@property.design_unit}" %></p>
-<p> <%= "Flow Rate: #{@property.flow_rate}" %></p>
-<p> <%= "Total Gallons Per Day: #{@property.gallons_per_day}" %></p>
+<div class="property-show-wrapper">
+  <h1> <%= "#{@property.number} #{@property.street}, #{@property.city}" %></h1>
+  <p> <%= "Bedrooms: #{@property.design_unit}" %></p>
+  <p> <%= "Flow Rate: #{@property.flow_rate}" %></p>
+  <p> <%= "Total Gallons Per Day: #{@property.gallons_per_day}" %></p>
+</div>
+<div class="test-hole-group-heading">
+  <h2>TEST HOLES</h2>
+</div>
+<div class="test-hole-group-wrapper">
+  <% @property.test_holes.each do |test|%>
+    <div class="test-hole-wrapper">
+      <div class="test-hole-header">
+        <h3> Test Number <%= test.test_number %> </h3>
+      </div>
+      <div class="test-hole-body">
+        <p>Load Rate: <%= test.load_rate %></p>
+        <p>Ledge Depth: <%= test.ledge_depth %></p>
+        <p>SHWT: <%= test.shwt %></p>
+        <p>Date: <%= test.date %></p>
+      </div>
+      <div class="cacluation-header">
+        <h3>cacluations</h3>
+      </div>
+      <div class="calc-data-header">
+        <p>required square footage <%= test.required_square_feet %> </p>
+      </div>
+      <div class="calc-data-wrapper">
+        <% @technologies.each do |tech| %>
+        <div class="test-calc-data">
+          <h3><%= "#{tech.make}: #{tech.model}"%></h3>
+          <p><%= tech.report(test.required_square_feet)%></p>
+        </div>
+        <%end%>
+      </div>
 
-<h2>TEST HOLES</h2>
-<% @property.test_holes.each do |test|%>
-  <h3> Test Number <%= test.test_number %> </h3>
-  <p>Load Rate: <%= test.load_rate %></p>
-  <p>Ledge Depth: <%= test.ledge_depth %></p>
-  <p>SHWT: <%= test.shwt %></p>
-  <p>Date: <%= test.date %></p>
-  <h3>cacluations</h3>
-  <p>required square footage <%= test.required_square_feet %> </p>
-  <% @technologies.each do |tech| %>
-    <h3><%= "#{tech.make}: #{tech.model}"%></h3>
-    <p><%= tech.report(test.required_square_feet)%></p>
-  <%end%>
-
-  <%= button_to "Destroy", test_hole_path(test), method: :delete, data: { confirm: "Are you sure?" } %>
-
-<% end %>
-<%= link_to "New Test Hole", new_test_hole_path(property_id: @property.id), method: :get %>
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Your Properties', user_path( @property.user ) %>
+      <%= button_to "Destroy Testhole", test_hole_path(test), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+  <% end %>
+</div>
+<div class="footer-wrapper shared-bar">
+  <div class="footer-link">
+    <%= link_to "Home", root_path %>
+  </div>
+  <div class="footer-link">
+    <%= link_to "New Testhole", new_test_hole_path(property_id: @property.id), method: :get %>
+  </div>
+  <div class="footer-link">
+    <%= link_to 'Edit Property', edit_property_path(@property) %>
+  </div>
+  <div class="footer-link">
+    <%= link_to 'Your Properties', user_path( @property.user ) %>
+  </div>
+  <div class="footer-destroy-link">
+    <%= link_to 'Destroy Property', @property, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>

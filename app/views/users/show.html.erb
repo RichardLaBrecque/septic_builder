@@ -1,13 +1,33 @@
 <p id="notice"><%= notice %></p>
-<p> <%= "#{@user.name}" %></p>
-<p> <%= "#{@user.email}" %></p>
-<% @user.properties.each do |property|%>
-  <tr>
-    <td><%= link_to "#{property.number} #{property.street}, #{property.city}", property %></td>
-    <td><%= link_to 'Edit', edit_property_path(property) %></td>      <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<div class="user-header-wrapper">
+  <div class="user-name-wrapper">
+    <h1> <%= "#{@user.name}" %></h1>
+  </div>
+  <div class="user-email-wrapper">
+    <p> <%= "#{@user.email}" %></p>
+  </div>
+</div>
+<div class="user-properties-group-wrapper">
+  <% @user.properties.each do |property|%>
 
-<p><%= link_to 'New Property', new_property_path(user_id: @user.id) %></p>
-<p><%= link_to 'Edit User', edit_user_path(@user) %> </p>
-<p><%= link_to 'All Clients', users_path %> </p>
+    <tr>
+      <div class="user-property-link">
+        <%= link_to "#{property.number} #{property.street}, #{property.city}", property %>
+      </div>
+    </tr>
+  <% end %>
+</div>
+<div class="footer-wrapper shared-bar">
+  <div class="footer-link">
+    <%= link_to "Home", root_path %>
+  </div>
+  <div class="footer-link">
+    <%= link_to 'New Property', new_property_path(user_id: @user.id) %>
+  </div>
+  <div class="footer-link">
+    <%= link_to 'Edit User', edit_user_path(@user) %>
+  </div>
+  <div class="footer-destroy-link">
+    <%= link_to 'Destroy User', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>

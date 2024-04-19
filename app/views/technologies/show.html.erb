@@ -2,4 +2,8 @@
 <h1><%= "#{@technology.make}:#{@technology.model}" %></h1>
 <p><%= "#{@technology.sqft} square feet per #{@technology.unit}" %></p>
 <%= link_to 'Edit', edit_technology_path(@technology) %> |
-<%= link_to 'Back', technologies_path %>
+<div class="footer-wrapper shared-bar">
+  <div class="footer-link">
+    <%= link_to "Home", root_path %>
+  </div>
+</div>

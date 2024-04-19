@@ -13,8 +13,6 @@
     <% @properties.each do |property| %>
       <tr>
         <td><%= link_to "#{property.number} #{property.street}, #{property.city}", property %></td>
-        <td><%= link_to 'Edit', edit_property_path(property) %></td>
-        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,3 +21,8 @@
 <br>
 
 <%= link_to 'New Property', new_user_property_path(user_id:@properties.first.user.id ) %>
+<div class="footer-wrapper shared-bar">
+  <div class="footer-link">
+    <%= link_to "Home", root_path %>
+  </div>
+</div>
