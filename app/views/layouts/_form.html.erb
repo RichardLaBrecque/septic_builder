@@ -1,0 +1,29 @@
+<div class="user-form-wrapper">
+  <%= form_with(model: @layout, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :sqft, class: "form-label" %>
+      <%= f.number_field :sqft, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.file_field :layout_image %>
+    </div>
+
+
+
+    <% if layout.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(layout.errors.count, "error") %> prohibited this layout from being saved:</h2>
+
+        <ul>
+          <% layout.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

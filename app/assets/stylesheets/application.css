@@ -96,6 +96,17 @@
   /* Centers the div horizontally */
   text-align: center;
   /* Centers the text inside the div */
+  display: flex;
+}
+
+.property-show-details {
+  flex: 1;
+  /* Adjust width as needed */
+}
+
+.property-show-notes {
+  flex: 1;
+  /* Adjust width as needed */
 }
 
 .test-hole-group-wrapper {

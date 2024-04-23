@@ -27,6 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'carrierwave', '~> 3.0'
 
 group :development, :test do
   gem 'pry'
@@ -36,6 +37,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'launchy'
+  gem 'annotate'
+
 end
 
 group :development do

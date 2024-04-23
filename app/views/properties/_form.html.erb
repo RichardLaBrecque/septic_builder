@@ -1,46 +1,66 @@
-<%= form_with(model: @property, local: true) do |f| %>
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
+<div class="user-form-wrapper">
+  <%= form_with(model: @property, local: true, html: { class: "user-form" }) do |f| %>
+    <div class="form-group">
+      <%= f.label :city, class: "form-label" %>
+      <%= f.text_field :city, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :street %>
-    <%= f.text_field :street %>
-  </div>
+    <div class="form-group">
+      <%= f.label :street, class: "form-label" %>
+      <%= f.text_field :street, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :number %>
-    <%= f.number_field :number %>
-  </div>
+    <div class="form-group">
+      <%= f.label :number, class: "form-label" %>
+      <%= f.number_field :number, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :design_unit %>
-    <%= f.number_field :design_unit %>
-  </div>
+    <div class=""form-group">
+      <%= f.label :design_unit, class: "form-label" %>
+      <%= f.number_field :design_unit, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :flow_rate %>
-    <%= f.number_field :flow_rate %>
-  </div>
+    <div class="form-group">
+      <%= f.label :flow_rate, class: "form-label" %>
+      <%= f.number_field :flow_rate, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.hidden_field :user_id %>
-  </div>
+    <div class="form-group">
+      <%= f.label :water_source, "Water Source", class: "form-label" %><br>
+      
+      <%= f.radio_button :water_source, :public_water %>
+      <%= f.label :water_source_public_water, "Public Water" %><br>
+      
+      <%= f.radio_button :water_source, :public_well %>
+      <%= f.label :water_source_public_well, "Public Well" %><br>
+      
+      <%= f.radio_button :water_source, :private_well %>
+      <%= f.label :water_source_private_well, "Private Well" %><br>
+    </div>
 
-  <% if property.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+    <div class="form-group">
+      <%= f.label :notes, class: "form-label" %>
+      <%= f.text_area :notes %>
+    </div>
 
-      <ul>
-        <% property.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="field">
+      <%= f.hidden_field :user_id %>
+    </div>
+
+    <% if property.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+        <ul>
+          <% property.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

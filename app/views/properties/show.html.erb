@@ -1,9 +1,16 @@
 <p id="notice"><%= notice %></p>
 <div class="property-show-wrapper">
-  <h1> <%= "#{@property.number} #{@property.street}, #{@property.city}" %></h1>
-  <p> <%= "Bedrooms: #{@property.design_unit}" %></p>
-  <p> <%= "Flow Rate: #{@property.flow_rate}" %></p>
-  <p> <%= "Total Gallons Per Day: #{@property.gallons_per_day}" %></p>
+  <div class="property-show-details">
+    <h1> <%= "#{@property.number} #{@property.street}, #{@property.city}" %></h1>
+    <p> <%= "Bedrooms: #{@property.design_unit}" %></p>
+    <p> <%= "Flow Rate: #{@property.flow_rate}" %></p>
+    <p> <%= "Total Gallons Per Day: #{@property.gallons_per_day}" %></p>
+    <p> <%= "Water Supply: #{@property.water_source.humanize}" %></p>
+  </div>
+
+  <div class="property-show-notes">
+    <p> <%= "Notes: #{@property.notes}" %></p>
+  </div>
 </div>
 <div class="test-hole-group-heading">
   <h2>TEST HOLES</h2>

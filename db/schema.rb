@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_17_170821) do
+ActiveRecord::Schema.define(version: 2024_04_22_192851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "layouts", force: :cascade do |t|
+    t.float "sqft"
+    t.bigint "technology_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "layout_image"
+    t.index ["technology_id"], name: "index_layouts_on_technology_id"
+  end
 
   create_table "properties", force: :cascade do |t|
     t.string "city"
@@ -24,6 +33,8 @@ ActiveRecord::Schema.define(version: 2024_04_17_170821) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "water_source"
+    t.text "notes"
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
@@ -56,6 +67,7 @@ ActiveRecord::Schema.define(version: 2024_04_17_170821) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "layouts", "technologies"
   add_foreign_key "properties", "users"
   add_foreign_key "test_holes", "properties"
 end
